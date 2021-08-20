@@ -2,8 +2,9 @@
 
 //document.getElementById("buttonPlay").onclick = playRound;
 // it turns fucking out that there is Type Error is that the function after 'onclick =' is not suppose to have the '()'
-const button1 = document.querySelector('#buttonPlay') ;
-button1.onclick = fiveGame;
+
+//const button = document.querySelector('#buttonPlay') ;
+//button.onclick = fiveGame;
 		
 function computerInput (number){
 	number = Math.floor(Math.random()*3);
@@ -21,13 +22,25 @@ function computerInput (number){
 
 
 
-function playerInput(){
+		document.getElementById('button1').onclick =function(){
+				console.log('rock');
+				fiveGame();
+				playRound(computerInput(),'rock');
+		}
 
-	let inputVal = document.getElementById('boxinput').value;
+		document.getElementById('button2').onclick = function(){
+			console.log('PAPER');
+			fiveGame();
+			playRound(computerInput(),'paper');
+			}
+			
+		document.getElementById('button3').onclick = function(){
+				console.log('SCissor');
+				fiveGame();
+				playRound(computerInput(),'scissor');
+			}
 
-	return inputVal.toLowerCase();
-}
-
+	
 
 let computerPoints = 0;
 let playerPoints =0;
@@ -35,10 +48,8 @@ let playerPoints =0;
 function playRound (computerSelect, playerSelect) {
 	
 	console.log('function playRound is working');
-
-
-		computerSelect = computerInput();
-		playerSelect = playerInput();
+		
+		
 		document.getElementById('computerChoose').innerHTML = ('computer chooose: ' + computerSelect);
 		document.getElementById('youChoose').innerHTML = ('player chooose: ' + playerSelect);
 
@@ -79,7 +90,6 @@ let round = 0;
 
 	function fiveGame () {
 
-		playRound();
 		round +=1;
 		document.getElementById("roundCount").innerHTML = "Round " + round;		
 
