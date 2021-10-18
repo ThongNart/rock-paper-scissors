@@ -104,3 +104,9 @@ let round = 0;
 		}
 
 	}
+
+
+	// The code below here are for me to test code snippets while learning thru Odin project
+	const contacts = ['Chris:2232322', 'Sarah:3453456', 'Bill:7654322', 'Mary:9998769', 'Dianne:9384975'];
+	console.log(contacts[0].split(':'));
+
